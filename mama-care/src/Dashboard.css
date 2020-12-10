@@ -1,0 +1,34 @@
+.dashboard{
+    font-family: 'Raleway', sans-serif;
+    align-items: center;
+    height: 200vh;
+}
+.content{
+    margin: 100px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border: 10px;
+}
+.main__page{
+    display: flex;
+}
+.left {
+
+  float: left;
+  width: 40%;
+}
+.left h5{
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    color: #ff4411;
+    font-size: 30px;
+}
+.right{
+    float: right;
+    width: 60%;
+}

@@ -1,0 +1,29 @@
+.products{
+    width: 100%;
+}
+.products h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.main__page{
+    display: flex;
+}
+.products__box{
+    left: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.product__box{
+    background: white;
+    cursor: pointer;
+    margin: 10px;
+    justify-content: center;
+    height: 300px;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    padding: 20px;
+    align-items: center;
+    border-radius: 5px;
+}
