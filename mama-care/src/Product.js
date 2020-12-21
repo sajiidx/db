@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "./axios";
 import './Product.css'
-import Button from '@material-ui/core/Button'
 
 function Product({title, fetchUrl}){
     const [products, setProducts] = useState([]);
@@ -24,6 +23,22 @@ function Product({title, fetchUrl}){
             console.log(product?.price);
         }
     }
+    
+    const addToCart = async (product) => {
+        var username = localStorage.getItem('username')
+        console.log("Username: ", username)
+        const response = await axios({
+            url: 'http://localhost:5040/cart/update',
+            method: 'POST',
+            data:{
+                cusername: username,
+                item: [
+                    product.pid
+                ]
+            }
+        })
+        console.log(response)
+    }
 
     return (
         <div className="products">
@@ -33,6 +48,10 @@ function Product({title, fetchUrl}){
                     <div onClick={() => handleClick(product) } className="products__details">
                         <div className="product__box">
                             <h5>{product.pname}</h5>
+                            <h2>${product.price}</h2>
+                            <div>
+                                <button onClick={() => addToCart(product) }>Add to Chart</button>
+                            </div>
                         </div>
                         
                     </div>

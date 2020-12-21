@@ -26,8 +26,8 @@ const getProducts = (req, res) => {
 }
 //show Product using ID
 const show = (req, res) => {
-    let ProductID = req.body.ProductID
-    Product.findById(ProductID)
+    let pid = req.body.pid
+    Product.findOne({pid: pid})
     .then(response => {
         res.json({
             response

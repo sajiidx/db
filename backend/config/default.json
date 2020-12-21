@@ -1,4 +1,4 @@
 {
-    "mongoURL": "mongodb+srv://sajiidx:sajiidx@cluster0.u2ccs.mongodb.net/mama-care?retryWrites=true&w=majority",
+    "mongoURL": "mongodb://sajiidx:sajiidx@cluster0-shard-00-00.u2ccs.mongodb.net:27017,cluster0-shard-00-01.u2ccs.mongodb.net:27017,cluster0-shard-00-02.u2ccs.mongodb.net:27017/mama-care?ssl=true&replicaSet=atlas-4durab-shard-0&authSource=admin&retryWrites=true&w=majority",
     "jwtSecret": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
 }

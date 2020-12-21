@@ -6,6 +6,7 @@ import Dashboard from './Dashboard'
 import store from './store'
 import Register from './Register'
 import Admin from './Admin'
+import Cart from './Cart'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { setToken } from './setToken';
 import { loadUser } from './action/auth';
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/register" component={Register}/>
           <Route exact path="/" component={Dashboard}/>
           <Route exact path="/login" component={Login}/>
+          <Route exact path="/cart" component={Cart}/>
         </Switch>
       </Router>
     </Provider>

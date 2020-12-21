@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import "./Register.css"
 import {registerUser} from './action/auth'
 import {Redirect} from 'react-router-dom'
+import axios from 'axios'
 
 const Register = ({isLoggedIn, registerUser}) => {
 
@@ -24,7 +25,7 @@ const Register = ({isLoggedIn, registerUser}) => {
         setData({...data,[e.target.name]: e.target.value})
     }
 
-    const submitData = () =>{
+    const submitData = async () =>{
         if(fname === '' || lname === '' ||
         username === '' || email === '' ||
         password === '' || phone === ''){
@@ -38,7 +39,16 @@ const Register = ({isLoggedIn, registerUser}) => {
             password,
             phone
         )
-        console.log(data);
+        localStorage.setItem('username',username)
+        const response = await axios({
+            url: 'http://localhost:5040/cart/store',
+            method: 'POST',
+            data:{
+                cart_id: Date.now(),
+                cusername: username
+            }
+        })
+        console.log(data, response);
     }
 
     return (

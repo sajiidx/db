@@ -21,6 +21,7 @@ const Login = ({ isLoggedIn,loginUser}) => {
 
     const submitData = () =>{
         loginUser(username,password)
+        localStorage.setItem('username',username)
         //console.log(data);
     }
 
@@ -43,8 +44,6 @@ const Login = ({ isLoggedIn,loginUser}) => {
                     <a href="/register">Sign Up</a>
 
                 </div>
-                
-            
         </div>
     )
 }

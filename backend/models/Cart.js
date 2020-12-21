@@ -9,8 +9,8 @@ const cartSchema = mongoose.Schema({
     items: {
         type: [String],
     },
-    cost: {
-        type: Number,
+    cusername: {
+        type: String,
         required: true
     }
 })

@@ -61,7 +61,7 @@ const Admin = () => {
                 <button onClick={()=>submitData()} id='upload'>Upload</button>
             </div>
             <div>
-                <h4 id="message"></h4>
+                <h4 id="message"> </h4>
             </div>
         </div> 
     )
