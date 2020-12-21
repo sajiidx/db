@@ -8,6 +8,7 @@ router.get('/', cartController.index)
 router.post('/show', cartController.show)
 router.post('/store', cartController.store)
 router.post('/update', cartController.update)
+router.post('/empty',cartController.doCartEmpty)
 router.post('/delete', cartController.destory)
 
 module.exports = router

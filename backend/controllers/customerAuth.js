@@ -86,6 +86,19 @@ const login = (req, res) => {
         }
     })
 }
+const getUser = (req, res) => {
+    Customer.findOne({username: req.body.username})
+        .then(response => {
+            res.json({
+                response
+            })
+        })
+        .catch(error => {
+            res.json({
+                error
+            })
+        })
+}
 module.exports = {
-    register, login
+    register, login, getUser
 }

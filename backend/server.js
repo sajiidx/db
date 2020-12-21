@@ -4,6 +4,7 @@ const AuthRoute = require('./routes/auth')
 const connectToDatabase = require('./config/connectToDatabase')
 const ProductRoute = require('./routes/product')
 const CartRoute = require('./routes/cart')
+const OrderRoute = require('./routes/order')
 const cors = require('cors')
 
 const port = process.env.PORT || 5040;
@@ -17,6 +18,7 @@ app.use(express.json())
 app.use('/customer', AuthRoute)
 app.use('/product', ProductRoute)
 app.use('/cart', CartRoute)
+app.use('/order',OrderRoute)
 
 // DB config
 connectToDatabase()

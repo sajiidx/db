@@ -20,7 +20,7 @@ function Nav(){
     return(
         <div className={`nav ${show && "nav__black"}`}>
             <div className="div__logo">
-                <h2 className="nav__logo">Website</h2>
+                <h2 className="nav__logo">Mama Care</h2>
             </div>
             <div className="div__links">
                 <ul className="nav__links">

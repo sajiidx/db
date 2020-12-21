@@ -80,6 +80,29 @@ const update = (req, res) => {
         })
     }
     //delete an Cart
+    const doCartEmpty = (req, res) => {
+        let cusername = req.body.cusername
+        //let updatedData = JSON.parse(req.body.item)
+
+        //console.log(updatedData)
+
+        Cart.findOneAndUpdate({cusername: cusername}, {
+            $set: {
+                items:[
+                ]
+            }
+        })
+        .then(() => {
+            res.json({
+                message: 'Cart Updated Successfully'
+            })
+        })
+        .catch(error => {
+            res.json({
+                message: error
+            })
+        })
+    }
 const destory = (req, res) => {
         let cartID = req.body.cartID
         Cart.findByIdAndRemove(cartID)
@@ -101,5 +124,6 @@ module.exports = {
     store,
     update,
     destory,
-    getCarts
+    getCarts,
+    doCartEmpty
 }
