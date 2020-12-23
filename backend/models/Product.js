@@ -17,6 +17,14 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
+    quantity:{
+        type: Number,
+        required: true
+    },
+    ProductImage:{
+        type: String,
+        required: true,
+    },
     description:{
         type: String
     }

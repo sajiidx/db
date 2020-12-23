@@ -1,6 +1,9 @@
 import React from 'react'
 import './OurTeam.css'
 import './bootstrap.css'
+import Abbas from './images/abbas1.png';
+import Mudassir from './images/mud1.jpg';
+import Sajid from './images/sajid1.jpg';
 function OurTeam(){
     return(
         <section id="team">
@@ -9,7 +12,7 @@ function OurTeam(){
                 <div className="row">
                     <div  className="col-md-4 profile-pic text-center">
                         <div className="img-box">
-                            <img src="/images/abbas1.png" className="img-responsive"/>
+                            <img src={Abbas} className="img-responsive"/>
                             <ul>
                                 <a href="#"><li><i className="fa fa-facebook"></i></li></a>
                                 <a href="#"><li><i className="fa fa-twitter"></i></li></a>
@@ -22,7 +25,7 @@ function OurTeam(){
                     </div>
                     <div className="col-md-4 profile-pic text-center">
                         <div className="img-box">
-                            <img src="/images/mud1.jpg" className="img-responsive"/>
+                            <img src={Mudassir} className="img-responsive"/>
                             <ul>
                                 <a href="#"><li><i className="fa fa-facebook"></i></li></a>
                                 <a href="#"><li><i className="fa fa-twitter"></i></li></a>
@@ -35,7 +38,7 @@ function OurTeam(){
                     </div>
                     <div className="col-md-4 profile-pic text-center">
                         <div className="img-box">
-                            <img src="/images/abbas1.png" className="img-responsive sajid"/>
+                            <img src={Sajid} style={{height: "260px"}} className="img-responsive sajid"/>
                             <ul>
                                 <a href="#"><li><i className="fa fa-facebook"></i></li></a>
                                 <a href="#"><li><i className="fa fa-twitter"></i></li></a>

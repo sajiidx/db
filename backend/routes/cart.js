@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const cartController = require('../controllers/cartController')
-const upload = require('../middleware/upload')
 
 router.get('/', cartController.index)
 

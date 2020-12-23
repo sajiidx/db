@@ -47,8 +47,11 @@ function Product({title, fetchUrl}){
                 {products.map((product) =>(
                     <div onClick={() => handleClick(product) } className="products__details">
                         <div className="product__box">
-                            <h5>{product.pname}</h5>
-                            <h2>${product.price}</h2>
+                            <div className="image__box">
+                                <img className="image" src={"http://localhost:5040/"+product.ProductImage} />
+                            </div>
+                            <h1 className="product__name">{product.pname}</h1>
+                            <p className="product__price">${product.price}</p>
                             <div>
                                 <button onClick={() => addToCart(product) }>Add to Chart</button>
                             </div>

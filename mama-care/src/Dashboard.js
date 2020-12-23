@@ -10,6 +10,7 @@ import Footer from './Footer'
 import About from './About'
 import Services from './Services'
 import OurTeam from './OurTeam'
+import Testimonial from './Testimonial'
 
 const Dashboard = ({isLoggedIn, logout}) => {
     return (
@@ -41,6 +42,7 @@ const Dashboard = ({isLoggedIn, logout}) => {
             <About />
             <Services />
             <OurTeam />
+            <Testimonial />
             <div className="main__page">
                 <div className="left">
                     <h5>Category</h5>

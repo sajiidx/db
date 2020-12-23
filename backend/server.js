@@ -5,7 +5,9 @@ const connectToDatabase = require('./config/connectToDatabase')
 const ProductRoute = require('./routes/product')
 const CartRoute = require('./routes/cart')
 const OrderRoute = require('./routes/order')
+const CategoryRoute = require('./routes/category')
 const cors = require('cors')
+const { request } = require('express')
 
 const port = process.env.PORT || 5040;
 
@@ -19,6 +21,8 @@ app.use('/customer', AuthRoute)
 app.use('/product', ProductRoute)
 app.use('/cart', CartRoute)
 app.use('/order',OrderRoute)
+app.use('/upload',express.static('upload'))
+app.use('/category',CategoryRoute)
 
 // DB config
 connectToDatabase()

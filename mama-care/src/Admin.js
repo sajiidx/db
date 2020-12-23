@@ -26,12 +26,15 @@ const Admin = () => {
     const [data, setData] = useState({
         pid: '',
         pname: '',
-        price: 0
+        price: 0,
+        quantity: 0,
+        ProductImage: '',
+        description: '',
     })
 
     let msg = "";
 
-    let {pid, pname, price} = data;
+    let {pid, pname, price, quantity, ProductImage, description} = data;
 
     const onChange = e =>{
         console.log(e.target.name);
@@ -44,6 +47,16 @@ const Admin = () => {
         document.getElementById("message").innerHTML = msg; 
         console.log(data);
     }
+
+    const onImageChange = event => {
+        if (event.target.files && event.target.files[0]) {
+          let img = event.target.files[0];
+          setData({...data,
+            ProductImage: URL.createObjectURL(img)
+          });
+          console.log(ProductImage)
+        }
+    };
 
     return (
         <div className="products__store">
@@ -58,6 +71,17 @@ const Admin = () => {
                 <div className="pinput">
                     <input onChange={(e) => onChange(e)} value={price} type="number" id="price" name="price" placeholder="Price" required/>
                 </div>
+                <div className="pinput">
+                    <input onChange={(e) => onChange(e)} value={quantity} type="number" id="quantity" name="quantity" placeholder="Quantity" required/>
+                </div>
+                <div className="pinput">
+                    <input onChange={(e) => onChange(e)} value={description} type="text" id="description" name="description" placeholder="Description" required/>
+                </div>
+                <div>
+                    <img style={{width: "300px" }} src={ProductImage} />
+                    <h1>Select Image</h1>
+                    <input type="file" name="myImage"  onChange={onImageChange} />
+                </div>
                 <button onClick={()=>submitData()} id='upload'>Upload</button>
             </div>
             <div>
@@ -68,3 +92,6 @@ const Admin = () => {
 }
 
 export default Admin
+
+  
+

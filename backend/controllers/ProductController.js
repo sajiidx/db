@@ -41,15 +41,15 @@ const show = (req, res) => {
 }
 //add new Product
 const store = (req, res) => {
+    console.log(req.file)
     let product = new Product({
         pid: req.body.pid,
         pname: req.body.pname,
         price: req.body.price,
-        decription: req.body.decription
+        quantity: req.body.quantity,
+        ProductImage: req.file.path,
+        description: req.body.description,
     })
-    if(req.file){
-        product.photo = req.file.path
-    }
     product.save()
     .then(response => {
         return res.status(200).send({response,  msg: 'Product Added Successfully'})
@@ -63,13 +63,10 @@ const update = (req, res) => {
     let ProductID = req.body.ProductID
 
     let updatedData = {
-        pid: req.body.pid,
-        pname: req.body.pname,
-        price: req.body.price,
-        decription: req.body.decription
+        quantity: req.body.quantity
     }
 
-    Product.findByIdAndUpdate(ProductID, {$set: updatedData})
+    Product.findOneAndUpdate({pid: ProductID}, {$set: updatedData})
     .then(() => {
         res.json({
             message: 'Product Updated Successfully'
@@ -84,7 +81,7 @@ const update = (req, res) => {
 //delete an Product
 const destory = (req, res) => {
     let ProductID = req.body.ProductID
-    Product.findByIdAndRemove(ProductID)
+    Product.findOneAndRemove({pid: ProductID})
     .then(() => {
         res.json({
             message: 'Product Deleted Successfully'
