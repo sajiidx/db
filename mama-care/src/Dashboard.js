@@ -47,7 +47,6 @@ const Dashboard = ({isLoggedIn, logout}) => {
                 <div className="left">
                     <h5>Category</h5>
                 </div>
-                <Product className="right" title="All Products" fetchUrl="/product" />
             </div>
         <Footer />
         </div>

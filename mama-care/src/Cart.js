@@ -6,6 +6,7 @@ function Cart(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
+        var cost = [];
         var username = localStorage.getItem('username')
         async function fetchData(){
             const request = await axios({
@@ -15,6 +16,7 @@ function Cart(){
                     cusername: username
                 }
             });
+            
             console.log(request.data.response[0].items);
             var list = []
             var pds = request.data.response[0].items;
@@ -26,6 +28,7 @@ function Cart(){
                         pid: pds[i]
                     }
                 });
+                cost.push(response.data.response.price);
                 list.push(response.data.response)
             }
             console.log(list)
@@ -40,6 +43,7 @@ function Cart(){
             console.log('something went wrong')
         }
         else{
+            localStorage.setItem('cost', cost)
             console.log(product?.price);
         }
     }
@@ -52,6 +56,9 @@ function Cart(){
                     <div onClick={() => handleClick(product) } className="products__details">
                         <div className="product__box">
                             <h5>{product.pname}</h5>
+                            <div className="image__box">
+                                <img className="image" src={"http://localhost:5040/"+product.ProductImage} />
+                            </div>
                             <h2>${product.price}</h2>
                             <div>
                                 <div>

@@ -57,7 +57,8 @@ const store = (req, res) => {
     //update an Cart
 const update = (req, res) => {
         let cusername = req.body.cusername
-        let updatedData = JSON.parse(req.body.item)
+        const updatedData = req.body.item
+        console.log(updatedData)
 
         console.log(updatedData)
 

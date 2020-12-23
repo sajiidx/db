@@ -58,6 +58,20 @@ const store = (req, res) => {
         return res.status(401).send({error, msg: "An Error Occured!"})
     })
 }
+const cat = (req, res) => {
+    let cat_id = req.body.cat_id;
+    Product.find({cat_id: cat_id})
+    .then(response => {
+        res.json({
+            response
+        })
+    })
+    .catch(error => {
+        res.json({
+            error
+        })
+    })
+}
 //update an Product
 const update = (req, res) => {
     let ProductID = req.body.ProductID
@@ -95,5 +109,5 @@ const destory = (req, res) => {
 }
 //exporting functions
 module.exports = {
-    index, show, store, update, destory, getProducts
+    index, show, store, update, destory, getProducts, cat
 }

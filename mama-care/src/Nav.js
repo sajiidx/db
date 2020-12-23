@@ -26,6 +26,7 @@ function Nav(){
                 <ul className="nav__links">
                     <li><a className="nav__button" href="/home">Home</a></li>
                     <li><a className="nav__button" href="/shop">Shop</a></li>
+                    <li><a className="nav__button" href="/gallery">Gallery</a></li>
                     <li><a className="nav__button" href="/sale">Sale</a></li>
                     <li><a className="nav__button" href="/about">About</a></li>
                     <li><a className="nav__button" href="/cart">Cart</a></li>

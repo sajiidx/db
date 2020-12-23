@@ -11,6 +11,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { setToken } from './setToken';
 import { loadUser } from './action/auth';
 import Order from './Order'
+import Product from './Product';
 
 if(localStorage.getItem('token')){
   setToken(localStorage.getItem('token'))
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/admin" component={Admin}/>
           <Route exact path="/register" component={Register}/>
           <Route exact path="/" component={Dashboard}/>
+          <Route exact path="/gallery" component={Product}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/cart" component={Cart}/>
           <Route exact path="/order" component={Order}/>
